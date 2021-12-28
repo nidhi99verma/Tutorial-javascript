@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        body {
+            background-color: rgb(48, 51, 51);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hover {
+            width: 360px;
+            height: 100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .color {
+            width: 70px;
+            height: 15px;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .cyan {
+            background-color: cyan;
+        }
+
+        .violet {
+            background-color: violet;
+        }
+
+        .orange {
+            background-color: orange;
+        }
+
+        .pink {
+            background-color: pink;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="hover">
+        <div class="color red"></div>
+        <div class="color cyan"></div>
+        <div class="color violet"></div>
+        <div class="color orange"></div>
+        <div class="color pink"></div>
+    </div>
+    <div class="center"></div>
+
+    <script>
+        const red = document.querySelector('.red');
+        const cyan = document.querySelector('.cyan');
+        const violet = document.querySelector('.violet');
+        const orange = document.querySelector('.orange');
+        const pink = document.querySelector('.pink');
+
+        const center = document.querySelector('.center');
+        //console.log(window.getComputedStyle(red).background);
+        //console.log(window.getComputedStyle(red).backgroundColor);
+
+        const getBgColor = (seletedElement) => {
+            return window.getComputedStyle(seletedElement).backgroundColor;
+        }
+        console.log(getBgColor(pink));
+        console.log(getBgColor(orange));
+        
+
+    </script>
+</body>
+
+</html>

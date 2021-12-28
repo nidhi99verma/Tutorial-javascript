@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        body {
+            background-color: rgb(48, 51, 51);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hover {
+            width: 360px;
+            height: 100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+
+        .color {
+            width: 70px;
+            height: 15px;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .cyan {
+            background-color: cyan;
+        }
+
+        .violet {
+            background-color: violet;
+        }
+
+        .orange {
+            background-color: orange;
+        }
+
+        .pink {
+            background-color: pink;
+        }
+
+        .center {
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 200px;
+            height: 150px;
+            width: 150px;
+            border-radius: 50%;
+            position: absolute;
+
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="hover">
+        <div class="color red"></div>
+        <div class="color cyan"></div>
+        <div class="color violet"></div>
+        <div class="color orange"></div>
+        <div class="color pink"></div>
+    </div>
+    <div class="center">
+
+    </div>
+
+    <script>
+        const red = document.querySelector('.red');
+        const cyan = document.querySelector('.cyan');
+        const violet = document.querySelector('.violet');
+        const orange = document.querySelector('.orange');
+        const pink = document.querySelector('.pink');
+
+        const center = document.querySelector('.center');
+
+        const getBgColor = (seletedElement) => {
+            return window.getComputedStyle(seletedElement).backgroundColor;
+        }
+
+        //var Color1 = getBgColor(pink)
+        //pink.addEventListener('mouseenter', () => {
+        //    center.style.background = Color1;
+        //} );
+
+        //var Color2 = getBgColor(cyan)
+        //cyan.addEventListener('click', () => {
+        //    center.style.background = Color2;
+        //} );
+
+        //var Color3 = getBgColor(red)
+        //red.addEventListener('dblclick', () => {
+        //    center.style.background = Color3;
+        //} );
+
+        //var Color4 = getBgColor(violet)
+        //violet.addEventListener('mouseout', () => {
+        //    center.style.background = Color4;
+        //} );
+
+        //or
+
+        const colorPicker = (element, color) => {
+            return element.addEventListener('mouseout', () => {
+                center.style.background = color;
+            });
+        };
+
+        colorPicker(red,getBgColor(red));
+        colorPicker(cyan,getBgColor(cyan));
+        colorPicker(violet,getBgColor(violet));
+        colorPicker(orange,getBgColor(orange));
+        colorPicker(pink,getBgColor(pink));
+
+    </script>
+</body>
+
+</html>
