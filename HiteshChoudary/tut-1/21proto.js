@@ -11,13 +11,22 @@ var user = function(firstName, courseCount) {
 user.prototype.bio = function(){
     console.log(`Hey my name is ${this.firstName} and I'm subscribing ${this.courseCount} courses`);
 }
+// user.prototype.bio = () => {
+//     console.log(`Hey my name is ${this.firstName} and I'm subscribing ${this.courseCount} courses`);
+// }
 
 var nv = new user('Nidhi', 4);
 nv.getCoureseCount();
 console.log(nv.firstName);
-nv.bio();
+// nv.bio();
+if(nv.hasOwnProperty("firstName-")){
+    nv.bio();
+}
 
 var av = new user('Ajai', 6);
 av.getCoureseCount();
 console.log(av.firstName);
-av.bio();
+// av.bio();
+if(av.hasOwnProperty("firstName")){
+    av.bio();
+}
