@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: rgb(36, 36, 41);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container bg-warning p-4">
+        <h1 class="text-center">Nidhi Verma</h1>
+        <ul class="list-group">
+             <!-- inject code by js -->
+        </ul>
+        <button type="button" class="btn btn-primary btn-lg mt-4 mx-auto d-b;ock sort-btn">
+            Sort Decending Order ⬇
+        </button>
+        <button type="button" class="btn btn-primary btn-lg mt-4 mx-auto d-b;ock revsort-btn float-right">
+            Sort Acending Order ⬆
+        </button>
+    </div>
+
+
+    <script>
+         
+        const courses = [
+        {
+            name: "Python",
+            price: 31
+        },
+        {
+            name: "JavaScript",
+            price: 12
+        },
+        {
+            name: "Java",
+            price: 10
+        },
+        {
+            name: "TypeScript",
+            price: 26
+        },
+        {
+            name: "Go",
+            price: 16
+        }
+        ]
+
+        function generateList() {
+
+            const ul = document.querySelector(".list-group");
+            ul.innerHTML ="" //stop repeate when function call
+
+            courses.forEach((courses) => {
+
+                const li = document.createElement("li");
+                li.classList.add("list-group-item")
+
+                const name = document.createTextNode(courses.name);
+                li.appendChild(name);
+
+                const span = document.createElement("span");
+                span.classList.add("float-right");
+
+                const price = document.createTextNode("$ " + courses.price);
+                span.appendChild(price);
+
+                li.appendChild(span);
+                ul.appendChild(li);
+
+            })
+
+        }
+
+        //generateList();
+        //or
+        window.addEventListener("laod", generateList())
+
+        const button_d = document.querySelector(".sort-btn");
+        button_d.addEventListener("click", () => {
+            courses.sort((a, b) => a.price - b.price)             //a => {}
+            generateList();
+        });
+
+        const button_a = document.querySelector(".revsort-btn");
+        button_a.addEventListener("click", () => {
+            courses.sort((a, b) => b.price - a.price)             
+            generateList();
+        });
+
+    </script>
+</body>
+
+</html>

@@ -24,6 +24,6 @@ function doAddition(x){
 var add = doAddition(4);
 // console.log(add(5));
 //or
-console.log(doAddition(6)(5));
+console.log(doAddition(6)(5));   //curring
 
 //doAddition function contains reference of one function so it can not vanished memory because of closure
